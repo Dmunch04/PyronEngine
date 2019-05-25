@@ -1,3 +1,5 @@
-pyrender
+panda3d
 DavesLogger
 Eve
+glfw
+OpenGL

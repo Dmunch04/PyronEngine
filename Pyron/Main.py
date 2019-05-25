@@ -1,5 +1,5 @@
-from GUI import Window, TestWindow, rWindow
-from Core import Render, Convert
+from GUI import RenderWindow
+from Core import Render
 from Engine import SaveScene
 from Scripting import Input
 
@@ -25,8 +25,8 @@ def RunTest1 ():
     pass
 
 def RunTest2 ():
-    # -- Simple Example
-    #Window = rWindow ()
+    # -- Simple Example --
+    #Window = RenderWindow ()
     #Window.Draw (Render ('Data/Models/Test Models/Car.obj'))
     #Window.SpinCamera ()
     #Window.RotateCamera (180)

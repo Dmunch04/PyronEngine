@@ -1,1 +1,1 @@
-from GUI.Window import Window, TestWindow, rWindow
+from GUI.Window import RenderWindow

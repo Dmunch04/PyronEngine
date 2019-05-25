@@ -1,6 +1,6 @@
 import trimesh
 from pyrender import Mesh
-from Core.Convert import Convert
+from Core.Converter import Convert
 
 def Render (_Model = ''):
     EggData = Convert (_Model)
