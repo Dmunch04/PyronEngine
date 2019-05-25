@@ -31,7 +31,7 @@ def SaveScene (_Scene, _Path = ''):
 
     Index = 1
     for Model in _Scene.ModelMeshes:
-        ModelSavePath = ModelPath + f'/Model{str (Index)}.obj'
+        ModelSavePath = ModelPath + f'/Model{str (Index)}.egg'
 
         with open (ModelSavePath, 'w+') as File:
             File.write (Model)
@@ -42,6 +42,7 @@ def SaveScene (_Scene, _Path = ''):
 
     Models = ', '.join (Models)
 
+    """
     Camera = [
         f"'{_Scene.Camera.znear}'",
         f"'{_Scene.Camera.zfar}'",
@@ -65,6 +66,13 @@ def SaveScene (_Scene, _Path = ''):
         _Scene.Version,
         Camera,
         Light,
+        Models
+    )
+    """
+
+    Data = "[\n  'Title' :: '{0}'\n  'Version' :: '{1}'\n  'Models' :: ({4})\n];".format (
+        _Scene.Title,
+        _Scene.Version,
         Models
     )
 

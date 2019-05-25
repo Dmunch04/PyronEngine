@@ -1,21 +1,14 @@
 import trimesh
 from pyrender import Mesh
+from Core.Convert import Convert
 
 def Render (_Model = ''):
-    if _Model == 'TEST_':
-        ModelTrimesh = trimesh.load ('Data/Models/Test Models/LegoMan.obj')
-        ModelMesh = Mesh.from_trimesh (ModelTrimesh)
+    EggData = Convert (_Model)
 
-        with open ('Data/Models/Test Models/LegoMan.obj', 'r') as File:
-            Data = File.read ().strip ()
+    Path = 'Temp/Model.egg'
+    EggData.writeEgg (Path)
 
-        return ModelTrimesh, ModelMesh, Data
+    with open (Path, 'r') as File:
+        Data = File.read ()
 
-    else:
-        ModelTrimesh = trimesh.load (_Model)
-        ModelMesh = Mesh.from_trimesh (ModelTrimesh)
-
-        with open (_Model, 'r') as File:
-            Data = File.read ().strip ()
-
-        return ModelTrimesh, ModelMesh, Data
+    return Path, Data
